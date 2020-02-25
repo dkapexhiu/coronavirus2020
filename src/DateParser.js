@@ -59,12 +59,12 @@ class DataParser extends Component {
           <div class="clearfix">
             <div className="leftFloat width80 text-left">
               <div className="clearfix">
-                <p className="leftFloat">State: {todo.State}</p><br/>
-                <p className="leftFloat">Country: {todo.Country}</p><br/>
-                <p className="leftFloat">Last Update: {todo.Update}</p><br/>
-                <p className="leftFloat">Confirmed: {todo.Confirmed}</p><br/>
-                <p className="leftFloat">Deaths: {todo.Deaths}</p><br/>
-                <p className="leftFloat">Recovered: {todo.Recovered}</p>
+                <p>State: {todo.State}</p>
+                <p>Country: {todo.Country}</p>
+                <p>Last Update: {todo.Update}</p>
+                <p>Confirmed: {todo.Confirmed}</p>
+                <p>Deaths: {todo.Deaths}</p>
+                <p>Recovered: {todo.Recovered}</p>
               </div>
             </div>
           </div>
