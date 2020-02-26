@@ -16,7 +16,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./24.csv");
+    var csvFilePath = require("./25.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
@@ -59,7 +59,6 @@ class DataParser extends Component {
           <div class="clearfix">
             <div className="leftFloat width80 text-left">
               <div className="clearfix">
-                <p>State: {todo.State}</p>
                 <p>Country: {todo.Country}</p>
                 <p>Last Update: {todo.Update}</p>
                 <p>Confirmed: {todo.Confirmed}</p>
@@ -94,9 +93,10 @@ class DataParser extends Component {
     return (
       <div className="backwrapper">
         <div>{renderTodos}</div>
-        <div id="page-numbers">
+        <p>Novel Coronavirus (COVID-19) Cases, provided by <a href="https://systems.jhu.edu/research/public-health/ncov/">JHU CSSE</a></p>
+        {/* <div id="page-numbers">
           <ul>{renderPageNumbers}</ul>
-        </div>
+        </div>*/} 
       </div>
     );
   }

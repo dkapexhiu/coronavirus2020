@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h4>Coronavirus (COVID-19)</h4>
+          <h4>Coronavirus (COVID-19) Europe</h4>
         </header>
 
         <DateParser />
