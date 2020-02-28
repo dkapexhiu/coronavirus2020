@@ -6,8 +6,9 @@ class DataParser extends Component {
     this.state = {
       todos: ["a", "b"],
       currentPage: 1,
-      todosPerPage: 20
+      todosPerPage: 25
     };
+
 
     // Bind this to function updateData (This eliminates the error)
     this.updateData = this.updateData.bind(this);
@@ -16,7 +17,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./26.csv");
+    var csvFilePath = require("./27.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
