@@ -6,7 +6,7 @@ class DataParser extends Component {
     this.state = {
       todos: ["a", "b"],
       currentPage: 1,
-      todosPerPage: 25
+      todosPerPage: 30
     };
 
 
@@ -17,7 +17,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./27.csv");
+    var csvFilePath = require("./28.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
