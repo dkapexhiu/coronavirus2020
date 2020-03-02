@@ -6,7 +6,7 @@ class DataParser extends Component {
     this.state = {
       todos: ["a", "b"],
       currentPage: 1,
-      todosPerPage: 30
+      todosPerPage: 20
     };
 
 
@@ -17,7 +17,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./02-29-2020.csv");
+    var csvFilePath = require("./03-01-2020.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
@@ -74,7 +74,7 @@ class DataParser extends Component {
 
     // Logic for displaying page numbers
     const pageNumbers = [];
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 2; i++) {
       pageNumbers.push(i);
     }
 
@@ -95,9 +95,9 @@ class DataParser extends Component {
       <div className="backwrapper">
         <div>{renderTodos}</div>
         <p>Novel Coronavirus (COVID-19) Cases, provided by <a href="https://systems.jhu.edu/research/public-health/ncov/">JHU CSSE</a></p>
-        {/* <div id="page-numbers">
+        <div id="page-numbers">
           <ul>{renderPageNumbers}</ul>
-        </div>*/} 
+        </div> 
       </div>
     );
   }
