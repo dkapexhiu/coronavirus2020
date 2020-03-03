@@ -17,7 +17,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./03-01-2020.csv");
+    var csvFilePath = require("./03-02-2020.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
