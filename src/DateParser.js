@@ -4,7 +4,7 @@ class DataParser extends Component {
     // Call super class
     super(props);
     this.state = {
-      todos: ["a", "b"],
+      todos: ["", ""],
       currentPage: 1,
       todosPerPage: 20
     };
@@ -17,7 +17,7 @@ class DataParser extends Component {
 
   componentWillMount() {
     // Your parse code, but not seperated in a function
-    var csvFilePath = require("./03-06-2020.csv");
+    var csvFilePath = require("./latest.csv");
     var Papa = require("papaparse");
     Papa.parse(csvFilePath, {
       header: true,
