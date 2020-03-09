@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import FilterResults from 'react-filter-search';
+
 class DataParser extends Component {
   constructor(props) {
     // Call super class
     super(props);
     this.state = {
       todos: ["", ""],
+      value: '',
       currentPage: 1,
       todosPerPage: 20
     };
@@ -42,10 +45,15 @@ class DataParser extends Component {
     // or shorter ES syntax: this.setState({ data });
   }
 
+  handleChange = event => {
+    const { value } = event.target;
+    this.setState({ value });
+  };
+
   componentDidMount() {}
 
   render() {
-    const { todos, currentPage, todosPerPage } = this.state;
+    const { todos, value, currentPage, todosPerPage } = this.state;
 
     // Logic for displaying current todos
     const indexOfLastTodo = currentPage * todosPerPage;
@@ -55,22 +63,39 @@ class DataParser extends Component {
       : [];
 
     const renderTodos = currentTodos.map((todo, index) => {
+
       return (
+      <FilterResults
+          value={value}
+          data={todos}
+          renderResults={results => (
+      <div>
+              {results.map(todo => (
         <div className="card">
           <div class="clearfix">
             <div className="leftFloat width80 text-left">
               <div className="clearfix">
+            
+                <div>
                 <p>Country: {todo.Country}</p>
                 <p>Last Update: {todo.Update}</p>
                 <p>Confirmed: {todo.Confirmed}</p>
                 <p>Deaths: {todo.Deaths}</p>
                 <p>Recovered: {todo.Recovered}</p>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-      );
+        ))}
+      </div>
+      )}
+    />
+    );
+                    
     });
+
 
     // Logic for displaying page numbers
     const pageNumbers = [];
@@ -93,6 +118,7 @@ class DataParser extends Component {
     // Your render function
     return (
       <div className="backwrapper">
+      <input type="text" placeholder="Search a country: " value={value} onChange={this.handleChange} />
         <div>{renderTodos}</div>
         <p>Novel Coronavirus (COVID-19) Cases, provided by <a href="https://systems.jhu.edu/research/public-health/ncov/">JHU CSSE</a></p>
         <div id="page-numbers">
