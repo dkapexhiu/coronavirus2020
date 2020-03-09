@@ -121,9 +121,6 @@ class DataParser extends Component {
       <input type="text" placeholder="Search a country: " value={value} onChange={this.handleChange} />
         <div>{renderTodos}</div>
         <p>Novel Coronavirus (COVID-19) Cases, provided by <a href="https://systems.jhu.edu/research/public-health/ncov/">JHU CSSE</a></p>
-        <div id="page-numbers">
-          /*<ul>{renderPageNumbers}</ul>*/
-        </div>
       </div>
     );
   }
