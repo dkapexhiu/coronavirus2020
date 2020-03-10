@@ -118,7 +118,7 @@ class DataParser extends Component {
     // Your render function
     return (
       <div className="backwrapper">
-      <input type="text" placeholder="Search a country: " value={value} onChange={this.handleChange} />
+      <input type="text" id="inputField" placeholder="Search a country: " value={value} onChange={this.handleChange} />
         <div>{renderTodos}</div>
         <p>Novel Coronavirus (COVID-19) Cases, provided by <a href="https://systems.jhu.edu/research/public-health/ncov/">JHU CSSE</a></p>
       </div>
