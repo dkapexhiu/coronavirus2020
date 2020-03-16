@@ -1,4 +1,4 @@
-# Coronavirus 2020
+# Covid-19
 
 To run,
 
