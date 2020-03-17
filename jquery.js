@@ -10,7 +10,6 @@ $(document).ready(function() {
             $('.container').append(
                 '<div class="card">'
                 + '<h1>Country: ' + movie.Country_Region + '</h1>'
-                + '<p>Active: ' + movie.Active + '</p>'
                 + '<p>Confirmed: ' + movie.Confirmed + '</p>'
                 + '<p>Deaths: ' + movie.Deaths + '</p>'
                 + '<p>Recovered: ' + movie.Recovered + '</p>'
@@ -27,6 +26,13 @@ $(document).ready(function() {
             +'</div>'
         );
     });
+
+   $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#app .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
 
 });
 
